@@ -1,0 +1,9 @@
+local server = require(script.Parent.Server)
+local domain = 'rbx-js.herokuapp.com' -- Make sure there is no http:// in here!
+local key = '/UAO9lTOYapr8ecV8cs/t3cP9c7na6rKHfRn7M6GDct+PdJyQJ40Jebe+CKZDgKV8TRLtbBqfhJc/eHNC7RHA8BCKkrFOkaIKC9/ripy34QzLq3m2qqy/GdyCg/5KHFUPbsuRNetr52ZP+6E2puKWrR9XvuAMG9bq+X02luwmID6aU7YBpq7sALl21Pv0OB4wy43VhuI3esN8w/Rl0ZC3LiJWwMv8PnwCKqgmq9L9UXLVBEPNJ9Plcv73+QqArHqiZ/qtrJO88='
+local groupId = 18
+local userId = game:GetService'Players':GetUserIdFromNameAsync'Shedletsky'
+local api = server(domain, key, groupId)
+print(api.promote(userId).message)
+print(api.message(userId, 'Subject', 'Body').message)
+print(api.getBlurb(1).data.blurb)
